@@ -1,0 +1,1340 @@
+/****************************************************
+ GENERAL
+****************************************************/
+
+body {
+
+    font-family:'Poppins', sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7f3ea,
+            #ece4d4
+        );
+
+    color:#222;
+
+}
+
+
+.container {
+
+    max-width:1200px;
+
+}
+
+
+.flex-container {
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+
+
+/****************************************************
+ HEADINGS
+****************************************************/
+
+
+h1 {
+
+    color:#8b0000;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+}
+
+
+h2 {
+
+    font-weight:700;
+
+}
+
+
+h3 {
+
+    font-weight:600;
+
+}
+
+
+h5 {
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+
+
+/****************************************************
+ BUTTONS
+****************************************************/
+
+
+button {
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    height:50px;
+
+    padding:0 28px;
+
+    margin:10px;
+
+
+    border:none;
+
+    border-radius:14px;
+
+
+    background:#8b0000;
+
+    color:white;
+
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:16px;
+
+    font-weight:600;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+        0 6px 14px rgba(0,0,0,.35);
+
+
+    transition:
+
+        transform .25s ease,
+
+        background .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+
+button:hover {
+
+    background:#b30000;
+
+    transform:translateY(-3px);
+
+
+    box-shadow:
+
+        0 10px 18px rgba(0,0,0,.45);
+
+}
+
+
+button:active {
+
+    transform:translateY(1px);
+
+}
+
+
+button:disabled {
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+
+
+/****************************************************
+ INPUTS
+****************************************************/
+
+
+input,
+select {
+
+    border-radius:10px;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+input {
+
+    text-align:center;
+
+}
+
+
+
+/****************************************************
+ GENRE / PRODUCER CARD
+****************************************************/
+
+
+.job-card {
+
+    width:220px;
+
+    height:300px;
+
+    margin:20px auto;
+
+    perspective:1000px;
+
+}
+
+
+.job-inner {
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+
+    transform-style:preserve-3d;
+
+
+    transition:
+
+        transform 1s ease;
+
+}
+
+
+.job-card.flipped .job-inner {
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+.job-front,
+.job-back {
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+
+    border-radius:20px;
+
+
+    backface-visibility:hidden;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+        0 12px 24px rgba(0,0,0,.35);
+
+}
+
+
+
+.job-front {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #222,
+            #555
+        );
+
+
+    color:white;
+
+
+    font-size:34px;
+
+    font-weight:800;
+
+}
+
+
+
+.job-back {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffdd55,
+            #ff9933
+        );
+
+
+    transform:rotateY(180deg);
+
+
+    padding:15px;
+
+}
+
+/****************************************************
+ PLAYER SELECTION CARDS
+****************************************************/
+
+
+#heroCards,
+#locationCards,
+#twistCards,
+#quoteCards {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    max-width:900px;
+
+    margin:20px auto;
+
+}
+
+
+
+/****************************************************
+ SELECTED CARD EFFECT
+****************************************************/
+
+
+.word-card.selected {
+
+    transform:
+        translateY(-18px)
+        scale(1.05);
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffd700,
+            #ff9900
+        );
+
+
+    color:#222;
+
+
+    border:4px solid #8b0000;
+
+
+    box-shadow:
+
+        0 15px 25px rgba(0,0,0,.45);
+
+}
+
+
+
+/****************************************************
+ MOVIE TITLE INPUT
+****************************************************/
+
+
+#movieTitle {
+
+    width:80%;
+
+    max-width:500px;
+
+
+    margin:20px auto;
+
+
+    display:block;
+
+
+    border-radius:12px;
+
+
+    border:2px solid #8b0000;
+
+
+    padding:15px;
+
+
+    font-family:'Poppins',sans-serif;
+
+
+    font-size:18px;
+
+
+    text-align:center;
+
+
+    resize:none;
+
+
+    box-shadow:
+
+        0 5px 12px rgba(0,0,0,.25);
+
+}
+
+
+
+#movieTitle:focus {
+
+    outline:none;
+
+
+    border-color:#ff9900;
+
+
+    box-shadow:
+
+        0 0 10px rgba(255,153,0,.7);
+
+}
+
+
+
+/****************************************************
+ WINNER SELECTION AREA
+****************************************************/
+
+
+#pickWinner {
+
+    display:flex;
+
+    flex-direction:row;
+
+    align-items:flex-start;
+
+
+    gap:20px;
+
+
+    overflow-x:auto;
+
+    overflow-y:hidden;
+
+
+    padding:30px;
+
+
+    width:100%;
+
+
+    box-sizing:border-box;
+
+
+    scroll-behavior:smooth;
+
+}
+
+
+#pickWinner h2 {
+
+    width:100%;
+
+    flex-basis:100%;
+
+    text-align:center;
+
+}
+
+
+
+/****************************************************
+ BLOCKBUSTER MOVIE CASES
+****************************************************/
+
+
+.pitch-card {
+
+    flex:0 0 280px;
+
+
+    height:450px;
+
+
+    overflow:hidden;
+
+
+    border-radius:12px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    background:#1b1b1b;
+
+
+    color:white;
+
+
+    border:6px solid #8b0000;
+
+
+    box-shadow:
+
+        0 12px 25px rgba(0,0,0,.45);
+
+
+    cursor:pointer;
+
+
+    transition:
+
+        transform .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+
+
+.pitch-card:hover {
+
+    transform:
+
+        translateY(-10px)
+        scale(1.03);
+
+
+    box-shadow:
+
+        0 18px 35px rgba(0,0,0,.55);
+
+}
+
+
+
+/****************************************************
+ POSTER CONTENT
+****************************************************/
+
+.poster-banner {
+
+    background:#0b3d91;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    padding:8px;
+
+
+    font-size:12px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:3px;
+
+}
+
+
+
+.poster-header {
+
+    background:#222;
+
+
+    color:white;
+
+
+    padding:20px;
+
+
+    text-align:center;
+
+}
+
+
+
+.poster-genre {
+
+    font-size:13px;
+
+
+    letter-spacing:3px;
+
+
+    text-transform:uppercase;
+
+
+    opacity:.9;
+
+}
+
+
+
+.poster-title {
+
+    font-size:clamp(14px, 2vw, 26px);
+
+    font-weight:800;
+
+    margin-top:12px;
+
+    line-height:1.15;
+
+    text-transform:uppercase;
+
+    min-height:55px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.poster-details {
+
+    flex:1;
+
+
+    background:#333;
+
+    color:white;
+
+
+    padding:15px;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    font-size:15px;
+
+
+    overflow:hidden;
+
+}
+
+
+
+.poster-details div {
+
+    padding:5px 0;
+
+
+    border-bottom:
+        1px solid rgba(255,255,255,.2);
+
+
+    white-space:nowrap;
+
+
+    overflow:hidden;
+
+
+    text-overflow:ellipsis;
+
+}
+
+
+.poster-footer {
+
+    background:#111;
+
+
+    color:white;
+
+
+    text-align:center;
+
+
+    padding:12px;
+
+
+    font-size:15px;
+
+}
+
+
+
+/****************************************************
+ GENRE STYLES
+****************************************************/
+
+/* ---------- ACTION / ADVENTURE ---------- */
+
+.pitch-card.action,
+.pitch-card.adventure,
+.pitch-card.superhero,
+.pitch-card.disaster,
+.pitch-card.pirate{
+
+    border-color:#d62828;
+
+}
+
+.pitch-card.action .poster-header,
+.pitch-card.adventure .poster-header,
+.pitch-card.superhero .poster-header,
+.pitch-card.disaster .poster-header,
+.pitch-card.pirate .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #b30000,
+            #5b0000
+        );
+
+}
+
+.pitch-card.action .poster-title,
+.pitch-card.adventure .poster-title,
+.pitch-card.superhero .poster-title,
+.pitch-card.disaster .poster-title,
+.pitch-card.pirate .poster-title{
+
+    font-family:Impact, sans-serif;
+
+    color:#ff6666;
+
+    letter-spacing:2px;
+
+    text-shadow:2px 2px 4px black;
+
+}
+
+
+
+/* ---------- HORROR ---------- */
+
+.pitch-card.horror,
+.pitch-card.zombie,
+.pitch-card.monster{
+
+    border-color:#444;
+
+}
+
+.pitch-card.horror .poster-header,
+.pitch-card.zombie .poster-header,
+.pitch-card.monster .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #111,
+            #550000
+        );
+
+}
+
+.pitch-card.horror .poster-title,
+.pitch-card.zombie .poster-title,
+.pitch-card.monster .poster-title{
+
+    font-family:"Courier New", monospace;
+
+    color:#ff5555;
+
+    letter-spacing:3px;
+
+    text-shadow:0 0 8px black;
+
+}
+
+
+
+/* ---------- MYSTERY ---------- */
+
+.pitch-card.mystery,
+.pitch-card.crime,
+.pitch-card.spy{
+
+    border-color:#666;
+
+}
+
+.pitch-card.mystery .poster-header,
+.pitch-card.crime .poster-header,
+.pitch-card.spy .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #444,
+            #111
+        );
+
+}
+
+.pitch-card.mystery .poster-title,
+.pitch-card.crime .poster-title,
+.pitch-card.spy .poster-title{
+
+    font-family:Georgia, serif;
+
+    color:#eeeeee;
+
+    letter-spacing:2px;
+
+}
+
+
+
+/* ---------- SCIENCE FICTION ---------- */
+
+.pitch-card.sciencefiction{
+
+    border-color:#00b4ff;
+
+}
+
+.pitch-card.sciencefiction .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #003366,
+            #001122
+        );
+
+}
+
+.pitch-card.sciencefiction .poster-title{
+
+    font-family:"Trebuchet MS", sans-serif;
+
+    color:#33ddff;
+
+    letter-spacing:3px;
+
+    text-shadow:0 0 10px #00aaff;
+
+}
+
+
+
+/* ---------- FANTASY ---------- */
+
+.pitch-card.fantasy{
+
+    border-color:#c9a227;
+
+}
+
+.pitch-card.fantasy .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #6b3fa0,
+            #2d1144
+        );
+
+}
+
+.pitch-card.fantasy .poster-title{
+
+    font-family:Georgia, serif;
+
+    color:#ffd700;
+
+    letter-spacing:2px;
+
+    text-shadow:0 0 8px #c9a227;
+
+}
+
+
+
+/* ---------- COMEDY ---------- */
+
+.pitch-card.comedy{
+
+    border-color:#ffd43b;
+
+}
+
+.pitch-card.comedy .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffbf00,
+            #ff7b00
+        );
+
+}
+
+.pitch-card.comedy .poster-title{
+
+    font-family:"Arial Rounded MT Bold", sans-serif;
+
+    color:white;
+
+}
+
+
+
+/* ---------- ROMANCE ---------- */
+
+.pitch-card.romance{
+
+    border-color:#ff69b4;
+
+}
+
+.pitch-card.romance .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff5ca8,
+            #c2185b
+        );
+
+}
+
+.pitch-card.romance .poster-title{
+
+    font-family:Georgia, serif;
+
+    font-style:italic;
+
+    color:#ffe6f2;
+
+}
+
+
+
+/* ---------- MUSICAL ---------- */
+
+.pitch-card.musical{
+
+    border-color:#cc66ff;
+
+}
+
+.pitch-card.musical .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #ff66cc,
+            #9933cc
+        );
+
+}
+
+.pitch-card.musical .poster-title{
+
+    font-family:Georgia, serif;
+
+    font-style:italic;
+
+    color:white;
+
+}
+
+
+
+/* ---------- SPORTS ---------- */
+
+.pitch-card.sports{
+
+    border-color:#2e8b57;
+
+}
+
+.pitch-card.sports .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #1f8f3a,
+            #0b4d1b
+        );
+
+}
+
+.pitch-card.sports .poster-title{
+
+    font-family:Impact, sans-serif;
+
+    color:white;
+
+}
+
+
+
+/* ---------- WESTERN ---------- */
+
+.pitch-card.western{
+
+    border-color:#b36b00;
+
+}
+
+.pitch-card.western .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #b36b00,
+            #5e3410
+        );
+
+}
+
+.pitch-card.western .poster-title{
+
+    font-family:Georgia, serif;
+
+    color:#ffe6b3;
+
+}
+
+
+
+/* ---------- CHRISTMAS ---------- */
+
+.pitch-card.christmas{
+
+    border-color:#008c45;
+
+}
+
+.pitch-card.christmas .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b8a43,
+            #b30000
+        );
+
+}
+
+.pitch-card.christmas .poster-title{
+
+    font-family:"Arial Rounded MT Bold", sans-serif;
+
+    color:white;
+
+}
+
+
+
+/* ---------- ANIMATION ---------- */
+
+.pitch-card.animation{
+
+    border-color:#00a8ff;
+
+}
+
+.pitch-card.animation .poster-header{
+
+    background:
+        linear-gradient(
+            180deg,
+            #00a8ff,
+            #7d5fff
+        );
+
+}
+
+.pitch-card.animation .poster-title{
+
+    font-family:"Arial Rounded MT Bold", sans-serif;
+
+    color:white;
+
+}
+/****************************************************
+ SCOREBOARD
+****************************************************/
+
+
+#ScorePage {
+
+    text-align:center;
+
+}
+
+
+#ScorePage h3 {
+
+    width:280px;
+
+
+    margin:12px auto;
+
+
+    padding:14px;
+
+
+    background:white;
+
+
+    border-radius:14px;
+
+
+    box-shadow:
+
+        0 5px 12px rgba(0,0,0,.3);
+
+
+    transition:.25s;
+
+}
+
+
+
+#ScorePage h3:hover {
+
+    transform:scale(1.05);
+
+}
+
+
+
+/****************************************************
+ HOW TO PLAY
+****************************************************/
+
+
+.paragraph {
+
+    max-width:700px;
+
+
+    text-align:left;
+
+}
+
+
+
+/****************************************************
+ LINKS
+****************************************************/
+
+
+a {
+
+    cursor:pointer;
+
+
+    color:#8b0000;
+
+
+    font-weight:600;
+
+}
+
+
+a:hover {
+
+    text-decoration:underline;
+
+}
+
+
+
+/****************************************************
+ CARD DEAL ANIMATION
+****************************************************/
+
+
+.word-card,
+.pitch-card {
+
+    animation:
+
+        deal .45s ease;
+
+}
+
+
+
+@keyframes deal {
+
+
+    0% {
+
+        opacity:0;
+
+
+        transform:
+
+            translateY(-150px)
+
+            rotate(-20deg)
+
+            scale(.6);
+
+    }
+
+
+
+    70% {
+
+        transform:
+
+            translateY(15px)
+
+            rotate(5deg);
+
+    }
+
+
+
+    100% {
+
+        opacity:1;
+
+
+        transform:
+
+            translateY(0)
+
+            rotate(0deg);
+
+    }
+
+}
+
+
+
+/****************************************************
+ MOBILE SUPPORT
+****************************************************/
+
+
+@media(max-width:900px){
+
+
+    #pickWinner {
+
+        padding:20px;
+
+    }
+
+
+    .pitch-card {
+
+        flex-basis:260px;
+
+        height:400px;
+
+    }
+
+
+}
+
+
+
+@media(max-width:600px){
+
+
+    .job-card {
+
+        width:160px;
+
+        height:220px;
+
+    }
+
+
+
+    #heroCards,
+    #locationCards,
+    #twistCards,
+    #quoteCards {
+
+        max-width:100%;
+
+    }
+
+
+
+    .pitch-card {
+
+        flex-basis:240px;
+
+        height:380px;
+
+    }
+
+
+
+    .poster-title {
+
+        font-size:22px;
+
+    }
+
+
+
+    #movieTitle {
+
+        width:90%;
+
+    }
+
+
+}

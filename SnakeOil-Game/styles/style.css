@@ -1,0 +1,652 @@
+/****************************************************
+ GENERAL
+****************************************************/
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f1e8;
+    color: #222;
+}
+
+
+.flex-container {
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    margin:0 auto;
+}
+
+
+/****************************************************
+ TITLES
+****************************************************/
+
+h1 {
+    font-weight:800;
+    color:#8b0000;
+}
+
+
+h2 {
+    font-weight:600;
+}
+
+
+h3 {
+    font-weight:600;
+}
+
+
+/****************************************************
+ BUTTONS
+****************************************************/
+
+button {
+
+    margin:10px;
+    padding:0 25px;
+
+    height:50px;
+    line-height:50px;
+
+    font-family:'Poppins', sans-serif;
+    font-weight:600;
+    font-size:16px;
+
+    border-radius:12px;
+
+    background:#8b0000;
+    color:white;
+
+    border:none;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    box-shadow:
+        0px 5px 10px rgba(0,0,0,.35);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+
+}
+
+
+button:hover {
+
+    transform:translateY(-3px);
+
+    background:#b30000;
+
+    box-shadow:
+        0px 8px 15px rgba(0,0,0,.45);
+
+}
+
+
+button:active {
+
+    transform:translateY(1px);
+
+}
+
+
+button:disabled {
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+/****************************************************
+ INPUTS
+****************************************************/
+
+
+input {
+
+    margin:5px;
+
+    border-radius:8px;
+
+    text-align:center;
+
+    font-family:'Poppins', sans-serif;
+
+}
+
+
+/****************************************************
+ CUSTOMER CARD
+****************************************************/
+
+
+.job-card,
+.word-card {
+
+
+    width:180px;
+
+    height:240px;
+
+    margin:20px auto;
+
+
+    perspective:1000px;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.job-inner,
+.word-inner {
+
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+
+    transition:
+        transform 1.2s ease;
+
+
+    transform-style:preserve-3d;
+
+}
+
+
+
+.job-card.flipped .job-inner,
+.word-card.flipped .word-inner {
+
+
+    transform:rotateY(180deg);
+
+}
+
+
+
+
+.job-front,
+.job-back,
+.word-front,
+.word-back {
+
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+
+    backface-visibility:hidden;
+
+
+    border-radius:18px;
+
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    box-shadow:
+
+        0px 8px 20px rgba(0,0,0,.45);
+
+}
+
+
+
+
+.job-front {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #222,
+        #555
+    );
+
+
+    color:white;
+
+
+    font-size:28px;
+
+    font-weight:800;
+
+}
+
+
+
+.job-back {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffd700,
+        #ff9900
+    );
+
+
+    transform:rotateY(180deg);
+
+
+    font-size:25px;
+
+    padding:10px;
+
+}
+
+
+
+
+/****************************************************
+ WORD CARDS
+****************************************************/
+
+
+#wordCards {
+
+    display:grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap:20px;
+
+    max-width:900px;
+
+    margin:20px auto;
+
+    justify-items:center;
+
+}
+
+.word-card {
+
+    width:120px;
+
+    height:170px;
+
+    margin:0;
+
+    padding:10px;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+   
+
+    border-radius:15px;
+
+    background:white;
+
+    color:#222;
+
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:18px;
+
+    line-height:1.2;
+
+    font-weight:600;
+
+
+    box-shadow:
+        0px 6px 15px rgba(0,0,0,.35);
+
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.word-card:hover {
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.word-card.selected {
+
+    transform:translateY(-18px);
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ffd700,
+        #ff9900
+    );
+
+
+    box-shadow:
+
+    0px 12px 20px rgba(0,0,0,.5);
+
+}
+
+.word-front {
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #004aad,
+        #00aaff
+    );
+
+
+    color:white;
+
+    font-size:35px;
+
+}
+
+
+
+.word-back {
+
+
+    background:white;
+
+    color:#222;
+
+    transform:rotateY(180deg);
+
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+/****************************************************
+ CARD DEAL ANIMATION
+****************************************************/
+
+.word-card.dealing {
+
+    opacity:0;
+
+    animation:
+        dealCard .5s ease forwards;
+
+}
+
+
+@keyframes dealCard {
+
+    0% {
+
+        opacity:0;
+
+        transform:
+            translateY(-150px)
+            rotate(-15deg)
+            scale(.5);
+
+    }
+
+
+    60% {
+
+        transform:
+            translateY(10px)
+            rotate(5deg)
+            scale(1.05);
+
+    }
+
+
+    100% {
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+
+    }
+
+}
+
+
+
+/****************************************************
+ PLAYER AREA
+****************************************************/
+
+
+#playerHand {
+
+
+    margin-top:30px;
+
+}
+
+
+
+
+#playerHand p {
+
+    font-size:22px;
+
+}
+
+
+
+/****************************************************
+ WINNER SELECTION
+****************************************************/
+
+
+#pickWinner {
+
+
+    padding:20px;
+
+}
+
+
+
+#pickWinner button {
+
+
+    display:block;
+
+    margin:12px auto;
+
+}
+
+
+
+/****************************************************
+ SCOREBOARD
+****************************************************/
+
+
+#ScorePage {
+
+
+    text-align:center;
+
+}
+
+
+
+#ScorePage h3 {
+
+
+    background:white;
+
+    width:250px;
+
+    margin:10px auto;
+
+
+    padding:12px;
+
+
+    border-radius:12px;
+
+
+    box-shadow:
+
+    0px 5px 12px rgba(0,0,0,.3);
+
+
+    transition:.3s ease;
+
+
+}
+
+
+#ScorePage h3:hover {
+
+
+    transform:scale(1.05);
+
+
+}
+
+
+
+/****************************************************
+ TABLES
+****************************************************/
+
+
+table {
+
+    margin:auto;
+
+    background:white;
+
+    border-radius:10px;
+
+    box-shadow:
+
+    0px 5px 15px rgba(0,0,0,.25);
+
+}
+
+
+
+/****************************************************
+ ANIMATIONS
+****************************************************/
+
+
+.fade-enter {
+
+    opacity:0;
+
+}
+
+
+
+.card-pop {
+
+
+    animation:
+
+    pop .4s ease;
+
+}
+
+
+
+@keyframes pop {
+
+
+    0% {
+
+        transform:scale(.8);
+
+    }
+
+
+    100% {
+
+        transform:scale(1);
+
+    }
+
+
+}
+
+
+
+/****************************************************
+ MOBILE SUPPORT
+****************************************************/
+
+
+@media(max-width:600px){
+
+
+    .word-card {
+
+        width:110px;
+
+        height:160px;
+
+    }
+
+
+    .job-card {
+
+        width:150px;
+
+        height:200px;
+
+    }
+
+
+}

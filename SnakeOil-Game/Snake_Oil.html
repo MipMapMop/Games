@@ -1,0 +1,358 @@
+<html>
+
+<head>
+
+<title>Snake Oil</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+<link rel="stylesheet"
+href="styles/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
+rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- =========================
+MAIN PAGE
+========================= -->
+
+
+<div id="MainPage"
+class="flex-container"
+style="padding-top:50px;">
+
+
+<div class="title">
+
+<h1>🐍 Snake Oil</h1>
+
+<h5>
+Create ridiculous products. Sell them. Win!
+</h5>
+
+</div>
+
+
+
+<div class="select">
+
+<p>
+How many players?
+</p>
+
+
+<select id="numOfPlayers"
+onchange="changeForm();">
+
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+
+</select>
+
+
+</div>
+
+
+
+<div class="boxes">
+
+
+<input type="text" name="pName0" placeholder="Player 1"><br>
+<input type="text" name="pName1" placeholder="Player 2"><br>
+<input type="text" name="pName2" placeholder="Player 3"><br>
+
+
+<input type="text" name="pName3" placeholder="Player 4" style="display:none"><br>
+<input type="text" name="pName4" placeholder="Player 5" style="display:none"><br>
+<input type="text" name="pName5" placeholder="Player 6" style="display:none"><br>
+<input type="text" name="pName6" placeholder="Player 7" style="display:none"><br>
+<input type="text" name="pName7" placeholder="Player 8" style="display:none"><br>
+<input type="text" name="pName8" placeholder="Player 9" style="display:none"><br>
+<input type="text" name="pName9" placeholder="Player 10" style="display:none"><br>
+<input type="text" name="pName10" placeholder="Player 11" style="display:none"><br>
+<input type="text" name="pName11" placeholder="Player 12" style="display:none"><br>
+
+
+</div>
+
+
+
+<div class="startgame">
+
+<button onclick="startGame();">
+Start Game
+</button>
+
+</div>
+
+
+
+<div class="howPlay">
+
+<a onclick="howTo();">
+How do I play?
+</a>
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<!-- =========================
+HOW TO PLAY
+========================= -->
+
+
+<div id="HowTo"
+class="flex-container"
+style="display:none;padding-top:50px;">
+
+
+<h1>
+🐍 Snake Oil
+</h1>
+
+
+<div class="paragraph">
+
+
+<h5>
+
+One player becomes the Customer.
+
+Everyone else becomes a salesperson.
+
+Each salesperson receives word cards.
+
+Combine two cards to invent a ridiculous product.
+
+Example:
+
+Rocket + Toothbrush = Rocket Toothbrush
+
+Pitch your invention to the Customer.
+
+The Customer chooses the best invention.
+
+The winner gets one point.
+
+The Customer rotates every round.
+
+
+</h5>
+
+
+</div>
+
+
+<button onclick="goBack();">
+Go Back
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- =========================
+GAME PAGE
+========================= -->
+
+
+<div id="GamePage"
+style="display:none;padding-top:50px;">
+
+
+
+<h1 id="customerName">
+Customer
+</h1>
+
+
+
+
+
+<div class="job-card" onclick="flipCustomer();">
+
+<div class="job-inner">
+
+
+<div class="job-front">
+
+CUSTOMER
+
+</div>
+
+
+<div class="job-back">
+
+<h2 id="customerCard">
+
+?
+
+</h2>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<br>
+
+
+
+<div id="playerHand">
+
+
+<h3 id="currentPlayerName">
+
+Player
+
+</h3>
+
+
+<h4>
+Choose two word cards
+</h4>
+
+
+
+<div id="wordCards">
+
+</div>
+
+
+
+<br>
+
+
+<button id="submitWords"
+onclick="submitPitch();"
+disabled>
+
+Pitch Product
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<div id="pickWinner"
+style="display:none;">
+
+
+<h2>
+Choose the winning product
+</h2>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- =========================
+SCORE PAGE
+========================= -->
+
+
+<div id="ScorePage"
+style="display:none;padding-top:50px;">
+
+
+
+<h1>
+Winner!
+</h1>
+
+
+<h2>
+Leaderboard
+</h2>
+
+
+
+<button onclick="nextRound();">
+Next Round
+</button>
+
+
+<button onclick="endGame();">
+End Game
+</button>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<script src="javascript/vars.js"></script>
+
+<script src="javascript/script.js"></script>
+
+
+</body>
+
+</html>
